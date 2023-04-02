@@ -1,0 +1,14 @@
+#!/usr/bin/env perl
+
+use English;
+
+$INPUT_RECORD_SEPARATOR = "\r";
+
+while (<>) {
+	chomp;
+	if (m/^[0-9]{5} /) {
+		print(substr($_, 6), "\n");
+	} else {
+		print($_, "\n");
+	}
+}

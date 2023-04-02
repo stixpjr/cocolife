@@ -1,0 +1,8 @@
+#!/usr/bin/env perl
+
+use English;
+
+while (<>) {
+	chomp;
+	printf("%05d %s\r", $INPUT_LINE_NUMBER * 10, $_);
+}
