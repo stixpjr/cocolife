@@ -3,7 +3,7 @@ COMMON=		LIFECORE.ASM TBLGEN.ASM RND.ASM ROMS.ASM TSTPTN.ASM
 all:		cocolife.dsk
 
 clean:
-		-rm -f *.bin *.ASM cocolife.dsk cocolife.dsk.bak
+		-rm -f *.bin *.ASM cocolife.dsk.bak
 
 test:		lifeg2r.bin
 		xroar -machine coco -load lifeg2r.bin
