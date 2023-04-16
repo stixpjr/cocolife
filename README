@@ -11,12 +11,15 @@ diagram. This is the result.
 
 Note: I also found a 6502 implementation[3], but haven't studied it closely.
 
-There are 3 separate binaries, for different graphics modes (resolutions).
+There are 4 separate binaries, for different graphics modes (resolutions).
 Obviously, given the algorithm, this only works with 1-bit per pixel modes:
 - lifeg6r: 256x192, runs at about 0.25Hz on a real CoCo 1.
 - lifeg2r: 128x96, runs at about 1Hz on a real CoCo 1.
 - lifeg1r: 128x64, runs at about 1.5Hz on a real CoCo 1, but looks weird with
   non-square pixels.
+- lif64x32: 64x32, runs at something like 2.5Hz on a real CoCo 1. Uses a CPYBTS
+  routine to copy the internal bitmap to the default semigraphics-4 mode
+  screen, hence doesn't achieve the theoretical 6Hz based on the above numbers.
 
 That puts the code at about 70 cycles per pixel; definitely not achievable by
 pixel-by-pixel code. Could it be made faster? Almost definitely.
