@@ -8,17 +8,17 @@ clean:
 test:		lifeg2r.bin
 		xroar -machine coco -load lifeg2r.bin
 
-lifeg1r.bin:	LIFEG1R.ASM LIFECORE.ASM TBLGEN.ASM RND.ASM ROMS.ASM
-		lwasm -9 -b -o $@ LIFEG1R.ASM
+lifeg1r.bin:	LIFEG1R.asm LIFECORE.asm TBLGEN.asm RND.asm ROMS.asm
+		lwasm -9 -b -o $@ LIFEG1R.asm
 
-lifeg2r.bin:	LIFEG2R.ASM LIFECORE.ASM TBLGEN.ASM RND.ASM ROMS.ASM
-		lwasm -9 -b -o $@ LIFEG2R.ASM
+lifeg2r.bin:	LIFEG2R.asm LIFECORE.asm TBLGEN.asm RND.asm ROMS.asm
+		lwasm -9 -b -o $@ LIFEG2R.asm
 
-lifeg6r.bin:	LIFEG6R.ASM LIFECORE.ASM TBLGEN.ASM RND.ASM ROMS.ASM
-		lwasm -9 -b -o $@ LIFEG6R.ASM
+lifeg6r.bin:	LIFEG6R.asm LIFECORE.asm TBLGEN.asm RND.asm ROMS.asm
+		lwasm -9 -b -o $@ LIFEG6R.asm
 
-lif64x32.bin:	LIF64X32.ASM LIFECORE.ASM TBLGEN.ASM RND.ASM ROMS.ASM
-		lwasm -9 -b -o $@ LIF64X32.ASM
+lif64x32.bin:	LIF64X32.asm LIFECORE.asm TBLGEN.asm RND.asm ROMS.asm
+		lwasm -9 -b -o $@ LIF64X32.asm
 
 cocolife.dsk:	lifeg1r.bin lifeg2r.bin lifeg6r.bin lif64x32.bin LIFEG1R.ASM LIFEG2R.ASM LIFEG6R.ASM LIF64X32.ASM ${COMMON}
 		cp tmpl.dsk $@
@@ -42,4 +42,4 @@ cocolife.dsk:	lifeg1r.bin lifeg2r.bin lifeg6r.bin lif64x32.bin LIFEG1R.ASM LIFEG
 .asm.ASM:
 		./asm2edtasm < $< > $@
 
-LIFECORE.ASM:	TSTPTN.ASM
+LIFECORE.asm:	TSTPTN.asm

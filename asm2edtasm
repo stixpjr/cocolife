@@ -4,5 +4,7 @@ use English;
 
 while (<>) {
 	chomp;
+	s/(\s)IF(\s)/\1COND\2/;
+	s/INCLUDE(\s\w+)\.asm$/INCLUDE\1.ASM/;
 	printf("%05d %s\r", $INPUT_LINE_NUMBER * 10, $_);
 }

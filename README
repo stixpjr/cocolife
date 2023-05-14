@@ -38,15 +38,12 @@ into the assembly, but then later switched to generating these in assembly
 directly on program start.
 
 The code may be assembled with lwasm[5], but also cleanly assembles with
-EDTASM (with one minor change) - meeting one of my original goals. The
+EDTASM (with minor translations) - meeting one of my original goals. The
 included Makefile should create a disk image file containing EDTASM, all
 assembly source files, and the 3 BIN programs, assuming lwasm from lwtools and
 imgtool from Mame are installed. A short Perl script is used to add/remove
-line numbers and change line endings for ease of editing on Unix-like OSes.
-
-To build with EDTASM, the `COND` keyword needs to be substituted for the `IF`
-keyword in LIFECORE.ASM. This is definitely something the perl translation
-can handle...
+line numbers, minor translations, and change line endings for ease of editing
+on Unix-like OSes.
 
 As a comparison, existing simulators in colorcomputerarchive.com:
 - Game of Life by Jim Gerrie[6] is written in BASIC, renders on a SG-4 grid of
